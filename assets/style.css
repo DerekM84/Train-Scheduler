@@ -1,0 +1,17 @@
+body {
+    background-color: khaki;
+}
+
+.green-heading {
+    background-color:olivedrab;
+}
+
+.add-train-button {
+    background-color: olivedrab;
+}
+
+.trains-table {
+            display: inline-block;
+            width: 16.575%;
+            margin:auto;
+        }
