@@ -44,6 +44,18 @@ console.log("doc rdy");
       console.log("child added")
       
     var sv = ohSnap.val();
+      
+
+    //Plug in snapshot values, display first train time. 
+    //calculate minutes apart from first train. 
+    //
+    var tFrequency = parseInt(sv.frequency);
+    var firstTime = sv.first;
+    var firstTimeConverted = moment(firstTime, "H HH").subtract(1, "years");
+    var diffTime = moment().diff(moment(firstTimeConverted), "minutes");
+    var tRemainder = diffTime % tFrequency;
+    var tMinutesTillTrain = tFrequency - tRemainder;
+    var nextTrain = moment().add(tMinutesTillTrain, "minutes");
 
     var trainRow = $("<tr>").addClass("train-row");
         console.log(ohSnap.val().name);
@@ -53,8 +65,8 @@ console.log("doc rdy");
         $("<td>").text(sv.name),
         $("<td>").text(sv.destination),
         $("<td>").text(sv.first),
-        $("<td>").text(sv.frequency),
-        $("<td>").text("five, need value source"))
+        $("<td>").text(sv.frequency + " minutes"),
+        $("<td>").text(tMinutesTillTrain + " minutes"));
     
         $(".t-body").append(trainRow);
   })

@@ -6,13 +6,13 @@
     <meta charset="UTF-8" />
     <title>Train Schedule</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
+    <link href="https://fonts.googleapis.com/css?family=Titillium+Web&display=swap" rel="stylesheet">
     <link type="text/css" rel="stylesheet" href="./assets/style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-database.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
-
 </head>
 
 <body>
@@ -24,15 +24,15 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="card mb-4">
-                    <div class="card-header green-heading">Ultra-Comprehensive Train Scheduling Details and what not</div>
+                    <div class="card-header green-heading">Ultra-Comprehensive Train Scheduling</div>
                     <div class="card-body grey-background">
                         <table class="table table-sm table-hover trains-table">
                             <thead>
                                 <tr>
                                     <th scope="col">Train Name:</th>
                                     <th scope="col">Destination:</th>
-                                    <th scope="col">Next Train:</th>
-                                    <th scope="col">Frequency</th>
+                                    <th scope="col">First Arrival: </th>
+                                    <th scope="col">Frequency </th>
                                     <th scope="col">Minutes until Next:</th>
                                 </tr>
                             </thead>
@@ -50,13 +50,13 @@
             <div class="col-md-12">
 
                 <div class="card mb-4">
-                    <div class="card-header green-heading">Add a train to the list</div>
+                    <div class="card-header green-heading">Add a train:</div>
                     <div class="card-body">
 
                         <form class="train-form">
                             <div class="form-group">
                                 <label for="train-name-input"></label>
-                                <input class="form-control train-name-input" placeholder="  <--  Train Name"
+                                <input class="form-control train-name-input" placeholder=" <--  Train Name"
                                     type="text" />
                             </div>
                             <div class="form-group">
@@ -65,11 +65,11 @@
                             </div>
                             <div class="form-group">
                                 <label for="first-train-input"></label>
-                                <input class="form-control first-train-input" placeholder=" 00:00 AM/PM  <-- Next Train Departs?" type="text" />
+                                <input class="form-control first-train-input" placeholder=" '00:00 AM/PM' <-- First Train Arrives at station?" type="text" />
                             </div>
                             <div class="form-group">
                                 <label for="frequency-input"></label>
-                                <input class="form-control frequency-input" placeholder="  <--  (how often, in minutes)" type="text"/>
+                                <input class="form-control frequency-input" placeholder="Frequency"  <--  (how often, in minutes)" type="text"/>
                             </div>
                             <button class="btn btn-success float-right add-train-btn" type="submit">Submit</button>
                         </form>
