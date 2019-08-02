@@ -31,13 +31,13 @@
                                 <tr>
                                     <th scope="col">Train Name:</th>
                                     <th scope="col">Destination:</th>
-                                    <th scope="col">First Arrival: </th>
-                                    <th scope="col">Frequency </th>
-                                    <th scope="col">Minutes until Next:</th>
+                                    <th scope="col">Next Arrival: </th>
+                                    <th scope="col">Route: </th>
+                                    <th scope="col">Minutes Away</th>
                                 </tr>
                             </thead>
+                            
                             <tbody class="t-body">
-
 
                             </tbody>
                         </table>
@@ -65,11 +65,11 @@
                             </div>
                             <div class="form-group">
                                 <label for="first-train-input"></label>
-                                <input class="form-control first-train-input" placeholder=" '00:00 AM/PM' <-- First Train Arrives at station?" type="text" />
+                                <input class="form-control first-train-input" placeholder=" '00:00  First train arrives at what military time? ex. (4:00 PM = 16:00)" type="text" />
                             </div>
                             <div class="form-group">
                                 <label for="frequency-input"></label>
-                                <input class="form-control frequency-input" placeholder="Frequency"  <--  (how often, in minutes)" type="text"/>
+                                <input class="form-control frequency-input" placeholder="Frequency: <--  (how many minutes?)" type="number"/>
                             </div>
                             <button class="btn btn-success float-right add-train-btn" type="submit">Submit</button>
                         </form>

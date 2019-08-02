@@ -48,13 +48,22 @@ console.log("doc rdy");
 
     //Plug in snapshot values, display first train time. 
     //calculate minutes apart from first train. 
-    //
+    //moment("13:00", 'HH:mm').format('HH:mm a'));
+
+
     var tFrequency = parseInt(sv.frequency);
+
     var firstTime = sv.first;
-    var firstTimeConverted = moment(firstTime, "H HH").subtract(1, "years");
+
+    var firstTimeConverted = moment(firstTime, "HH:mm").subtract(1, "years");
+
     var diffTime = moment().diff(moment(firstTimeConverted), "minutes");
+    // diffTime gives minutes apart from now and First train time
+
     var tRemainder = diffTime % tFrequency;
+
     var tMinutesTillTrain = tFrequency - tRemainder;
+
     var nextTrain = moment().add(tMinutesTillTrain, "minutes");
 
     var trainRow = $("<tr>").addClass("train-row");
@@ -64,7 +73,7 @@ console.log("doc rdy");
         trainRow.append(
         $("<td>").text(sv.name),
         $("<td>").text(sv.destination),
-        $("<td>").text(sv.first),
+        $("<td>").text(moment(nextTrain).format("hh:mm a")),
         $("<td>").text(sv.frequency + " minutes"),
         $("<td>").text(tMinutesTillTrain + " minutes"));
     
